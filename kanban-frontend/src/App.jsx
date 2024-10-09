@@ -1,4 +1,5 @@
 import './App.css'
+import './CustomClasses.css'
 import Dashboard from './Pages/Dashboard/Dashboard'
 
 function App() {
