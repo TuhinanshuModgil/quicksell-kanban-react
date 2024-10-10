@@ -1,6 +1,5 @@
 import React from "react";
-import dotMenu from "../../Assets/icons_FEtask/3 dot menu.svg";
-import add from "../../Assets/icons_FEtask/add.svg";
+import {dotMenu, add} from "../../Assets/icons_FEtask";
 import UserImage from "../UserImage";
 
 function UserGroupHeader({ element, userData }) {

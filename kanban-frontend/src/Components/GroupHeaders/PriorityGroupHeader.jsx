@@ -1,12 +1,14 @@
 import React from "react";
-import dotMenu from "../../Assets/icons_FEtask/3 dot menu.svg";
-import add from "../../Assets/icons_FEtask/add.svg";
-import imgLowPriority from "../../Assets/icons_FEtask/Img - Low Priority.svg";
-import noPriority from "../../Assets/icons_FEtask/No-priority.svg";
-import imgHighPriority from "../../Assets/icons_FEtask/Img - High Priority.svg";
-import imgMediumPriority from "../../Assets/icons_FEtask/Img - Medium Priority.svg";
-import urgentPriorityColour from "../../Assets/icons_FEtask/SVG - Urgent Priority colour.svg";
-import urgentPriorityGrey from "../../Assets/icons_FEtask/SVG - Urgent Priority grey.svg";
+// import icons from assets
+import {
+  dotMenu,
+  add,
+  imgLowPriority,
+  noPriority,
+  imgHighPriority,
+  imgMediumPriority,
+  urgentPriorityColour,
+} from "../../Assets/icons_FEtask";
 
 // map of priority level and data associated with it
 const priorityMap = {
@@ -38,7 +40,6 @@ const priorityMap = {
   },
 };
 function PriorityGroupHeader({ element }) {
-  
   return (
     <div className="flex justify-between mb-2">
       <div className="flex gap-2 text-nowrap">

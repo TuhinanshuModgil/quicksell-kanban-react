@@ -3,7 +3,8 @@ import Navbar from '../../Components/Navbar/Navbar'
 import GroupContainer from '../../Components/GroupContainer';
 
 // ---SHIFT TO ENV AFTER IN REAL PRODUCTION DEVELOPEMNT---
-const API_URL = "https://api.quicksell.co/v1/internal/frontend-assignment";
+const API_URL = import.meta.env.VITE_QUICKSELL_API;;
+
 
 function Dashboard() {
     // the following data is populated using the API

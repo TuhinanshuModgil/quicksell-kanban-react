@@ -1,9 +1,6 @@
 import React from "react";
-import dotMenu from "../../Assets/icons_FEtask/3 dot menu.svg";
-import add from "../../Assets/icons_FEtask/add.svg";
-import backlog from "../../Assets/icons_FEtask/Backlog.svg";
-import inProgress from "../../Assets/icons_FEtask/in-progress.svg";
-import todo from "../../Assets/icons_FEtask/To-do.svg";
+import {dotMenu, add, backlog, inProgress, todo} from "../../Assets/icons_FEtask";
+
 
 // map of status with associated data
 const statusMap = {

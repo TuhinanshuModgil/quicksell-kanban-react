@@ -1,19 +1,5 @@
 import React from "react";
-import dotMenu from "../Assets/icons_FEtask/3 dot menu.svg";
-import add from "../Assets/icons_FEtask/add.svg";
-import backlog from "../Assets/icons_FEtask/Backlog.svg";
-import cancelled from "../Assets/icons_FEtask/Cancelled.svg";
-import display from "../Assets/icons_FEtask/Display.svg";
-import done from "../Assets/icons_FEtask/Done.svg";
-import down from "../Assets/icons_FEtask/down.svg";
-import imgHighPriority from "../Assets/icons_FEtask/Img - High Priority.svg";
-import imgMediumPriority from "../Assets/icons_FEtask/Img - Medium Priority.svg";
-import imgLowPriority from "../Assets/icons_FEtask/Img - Low Priority.svg";
-import inProgress from "../Assets/icons_FEtask/in-progress.svg";
-import noPriority from "../Assets/icons_FEtask/No-priority.svg";
-import urgentPriorityColour from "../Assets/icons_FEtask/SVG - Urgent Priority colour.svg";
-import urgentPriorityGrey from "../Assets/icons_FEtask/SVG - Urgent Priority grey.svg";
-import todo from "../Assets/icons_FEtask/To-do.svg";
+import {dotMenu, backlog, todo, inProgress} from "../Assets/icons_FEtask";
 import UserImage from "./UserImage";
 
 // Icon Map for Status
@@ -27,7 +13,7 @@ const iconMap = {
 function Cards({ cardData, userData }) {
    
   return (
-    <div className="border p-4 rounded-md shadow flex flex-col gap-2 min-h-40 justify-between bg-white max-w-80">
+    <div className="border p-4 rounded-md shadow flex flex-col gap-2 min-h-40 justify-between bg-white">
       <div className="flex gap-2 flex-col">
         <div className="flex justify-between">
           <h3 className="text-gray-600">{cardData.id}</h3>
