@@ -43,14 +43,14 @@ function PriorityGroupHeader({ element }) {
   return (
     <div className="flex justify-between mb-2">
       <div className="flex gap-2 text-nowrap">
-        <img src={priorityMap[element]?.icon ?? ""} alt="" />{" "}
+        <img src={priorityMap[element]?.icon ?? ""} alt="Priority" />{" "}
         <h3 className="">
           {priorityMap[element]?.text ?? ""} {priorityMap[element]?.level ?? ""}
         </h3>
       </div>
       <div className="flex gap-2">
-        <img src={add} alt="dot menu" />
-        <img src={dotMenu} alt="dot menu" />
+        <img src={add} alt="add" className="w-4"/>
+        <img src={dotMenu} alt="dot menu" className="w-4"/>
       </div>
     </div>
   );

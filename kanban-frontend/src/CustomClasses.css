@@ -101,6 +101,9 @@
 .w-2 {
     width: 0.5rem /* 8px */;
 }
+.w-4 {
+    width: 1rem /* 8px */;
+}
 .w-8 {
     width: 2rem /* 32px */;
 }

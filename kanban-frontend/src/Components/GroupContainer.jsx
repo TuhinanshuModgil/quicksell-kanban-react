@@ -16,9 +16,12 @@ function GroupContainer({ groupsData, ordering, usersData, grouping }) {
         return (
           <div key={index}>       
                 {/* Select the grouping header based on grouping */}
-                {grouping == "users" ? <> <UserGroupHeader element={element} userData={usersData[element]}/>  </> : ""} 
+                <div className="w-full">
+
+                {grouping == "users" ? <><UserGroupHeader element={element} userData={usersData[element]}/></> : ""} 
                 {grouping == "status" ? <><StatusGroupHeader element={element} /> </> : ""}
                 {grouping == "priority" ? <><PriorityGroupHeader element={element} /></> : ""}
+                </div>
             <Groups
               groupList={groupsData[element]}
               ordering={ordering}

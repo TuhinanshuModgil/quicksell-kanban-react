@@ -29,8 +29,8 @@ function StatusGroupHeader({ element }) {
         <h3 className="">{statusMap[element]?.text ?? ""}</h3>
       </div>
       <div className="flex gap-2">
-        <img src={add} alt="dot menu" />
-        <img src={dotMenu} alt="dot menu" />
+        <img src={add} alt="add" className="w-4"/>
+        <img src={dotMenu} alt="dot menu" className="w-4"/>
       </div>
     </div>
   );

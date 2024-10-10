@@ -5,10 +5,12 @@ import UserImage from "../UserImage";
 function UserGroupHeader({ element, userData }) {
   return (
     <div className="flex justify-between mb-2">
-      <UserImage userData={userData} />
+      <div className="flex gap-2 text-nowrap">
+        <UserImage userData={userData} />
+      </div>
       <div className="flex gap-2">
-        <img src={add} alt="dot menu" />
-        <img src={dotMenu} alt="dot menu" />
+        <img src={add} alt="add" className="w-4" />
+        <img src={dotMenu} alt="dot menu" className="w-4"/>
       </div>
     </div>
   );

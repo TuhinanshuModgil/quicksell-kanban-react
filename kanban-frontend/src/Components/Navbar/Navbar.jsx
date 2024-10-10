@@ -51,7 +51,7 @@ const Navbar = ({ grouping, setGrouping, ordering, setOrdering, call }) => {
     <div className="Navbar">
       <div className="dropdown-container" ref={dropdownRef}>
         <button onClick={() => setIsOpen(!isOpen)} className="dropdown-btn">
-          <img src={icon} />
+          <img src={icon} alt="display option icon"/>
           <div className="btn-txt">Display</div>
           <i className="bx bx-chevron-down"></i>
         </button>
