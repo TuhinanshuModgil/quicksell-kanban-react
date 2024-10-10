@@ -22,10 +22,10 @@ console.log("this is group", groupList, "user dada", usersData[groupList[0].user
   }
   return (
 
-    <div className="flex sm:flex-col w-full overflow-hidden gap-2">
+    <div className="flex sm:flex-col w-full overflow-auto gap-2">
         
       {groupList?.map((data, index) => (
-        <div key={index}>
+        <div key={index} className="flex-shrink-0 w-full">
           <Cards cardData={data} userData={usersData[data.userId]} />
         </div>
       )) ?? "no data"}

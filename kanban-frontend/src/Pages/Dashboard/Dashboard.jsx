@@ -81,9 +81,9 @@ function Dashboard() {
   return (
     <div>
         {/* ----- TESTING CONSOLE LOG BUTTON ----- */}
-        <button onClick={()=>console.log(grouping, " ", usersData)}> consolelog</button>
+        {/* <button onClick={()=>console.log(grouping, " ", usersData)}> consolelog</button> */}
       <Navbar grouping={grouping} ordering={ordering} setGrouping={setGrouping} setOrdering={setOrdering}/>
-      <div className='p-4 overflow-auto'>
+      <div className='p-6 bg-gray-100 overflow-auto'>
         <GroupContainer groupsData={groups} ordering={ordering} usersData={usersData} grouping={grouping}/>
       </div>
     </div>

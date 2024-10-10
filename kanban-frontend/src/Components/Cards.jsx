@@ -26,13 +26,13 @@ const iconMap = {
 function Cards({ cardData, userData }) {
     console.log("This is data1", userData)
   return (
-    <div className="border p-4 rounded-md shadow flex flex-col gap-2 min-h-40 justify-between">
+    <div className="border p-4 rounded-md shadow flex flex-col gap-2 min-h-40 justify-between bg-white max-w-80">
       <div className="flex gap-2 flex-col">
         <div className="flex justify-between">
           <h3 className="text-gray-600">{cardData.id}</h3>
             <UserImage userData={userData}/>
         </div>
-        <h2 className="font-semibold line-clamp-2">
+        <h2 className="font-semibold line-clamp-2" title={cardData.title}>
           <img
             src={iconMap[cardData?.status]}
             alt="task status"

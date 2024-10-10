@@ -7,7 +7,7 @@ function UserImage({userData}) {
     const backgroundColor = pastelColors[charToNumber(userData?.name?.[0]?? "a") ??0]
     console.log("this is bg", backgroundColor)
     return (
-    <div className='w-8 h-8 rounded-full flex justify-center items-center ' style={{backgroundColor : `${backgroundColor}`}}> 
+    <div className='w-8 h-8 rounded-full flex justify-center items-center ' style={{backgroundColor : `${backgroundColor}`}} title={userData?.name??""}> 
       <h3>{nameInitials}</h3>
     </div>
   )

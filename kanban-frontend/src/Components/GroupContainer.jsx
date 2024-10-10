@@ -11,7 +11,7 @@ function GroupContainer({ groupsData, ordering, usersData, grouping }) {
   const groupNames = Object.keys(groupsData) || [];
 
   return (
-    <div className="grid grid-flow-col auto-cols-[minmax(min(360px,100%),360px)] gap-8">
+    <div className="sm:grid sm:grid-flow-col sm:auto-cols-[minmax(min(360px,100%),360px)] sm:gap-8 flex flex-col gap-4">
       {groupNames.map((element, index) => {
         return (
           <div key={index}>       
