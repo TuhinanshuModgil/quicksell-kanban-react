@@ -33,7 +33,7 @@ function Cards({ cardData, userData }) {
           <h3 className="text-gray-600">{cardData.id}</h3>
             <UserImage userData={userData}/>
         </div>
-        <h2 className="font-semibold line-clamp-2" title={cardData.title}>
+        <h2 className="font-semibold line-clamp-2 text-gray-800" title={cardData.title}>
           <img
             src={iconMap[cardData?.status]}
             alt="task status"
@@ -49,7 +49,7 @@ function Cards({ cardData, userData }) {
         </div>
         {cardData?.tag?.map((tagText, index) => {
           return (
-            <div className="p-1 border rounded" key={index}>
+            <div className="p-1 border rounded text-gray-600" key={index}>
               {tagText}
             </div>
           );
