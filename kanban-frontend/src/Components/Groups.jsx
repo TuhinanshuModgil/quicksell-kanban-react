@@ -1,16 +1,36 @@
-import React from 'react'
+import React from "react";
+import Cards from "./Cards";
+const priorityMap = {};
+function Groups({ groupList, ordering, usersData, grouping }) {
+console.log("this is group", groupList, "user dada", usersData[groupList[0].userId])
+  if (ordering == "priority") {
+    groupList = groupList.sort((a, b) => a.priority - b.priority);
+  } else if (ordering == "title") {
+    groupList = groupList.sort((a, b) => {
+      const entityA = a.title.toUpperCase(); // ignore upper and lowercase
+      const entityB = b.title.toUpperCase(); // ignore upper and lowercase
+      if (entityA < entityB) {
+        return -1;
+      }
+      if (entityA > entityB) {
+        return 1;
+      }
 
-function Groups({groupList, ordering}) {
-    
+      // names must be equal
+      return 0;
+    });
+  }
   return (
-    <div>
-      {groupList?.map((data, index)=>(
-                <div key={index}>
-                {data.title}
-                </div>
-            ))?? "no data"}
+
+    <div className="flex sm:flex-col w-full overflow-hidden gap-2">
+        
+      {groupList?.map((data, index) => (
+        <div key={index}>
+          <Cards cardData={data} userData={usersData[data.userId]} />
+        </div>
+      )) ?? "no data"}
     </div>
-  )
+  );
 }
 
-export default Groups
+export default Groups;

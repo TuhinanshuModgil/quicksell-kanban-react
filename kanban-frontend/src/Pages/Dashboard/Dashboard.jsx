@@ -41,6 +41,9 @@ function Dashboard() {
         // map will have a structure like { grouping_value : array_of_all_data_having_that_value }
         const groupedData = {} 
         ticketsData.forEach((element)=> {
+            if(grouping == 'users'){
+                grouping = 'userId'
+            }
             // key corresponding to that value of selected grouping for that element 
             let key = groupedData[element[grouping]]
             // check if key is alreay present
@@ -52,9 +55,8 @@ function Dashboard() {
             }
 
         })
-        let eqdas = groupedData
-        setGroups(eqdas)
-        console.log("This is final map", groupedData)
+        
+        setGroups(groupedData)
     }
     
     // Calls the api and populates the usersData and ticketsData 
@@ -63,7 +65,13 @@ function Dashboard() {
             const response = await fetch(API_URL);
             const data = await response.json();
             setTicketsData(data.tickets)
-            setUsersData(data.users)
+
+            // Create a map of userId to userData to reduce time-complexity of searching in nested components
+            const userDataMap = {} 
+            data?.users?.forEach((user)=> {
+                userDataMap[user.id] = user
+            })
+            setUsersData(userDataMap)
             // -- TEST LOG --
             // console.log("this is data", data)
         } catch (error) {
@@ -73,10 +81,10 @@ function Dashboard() {
   return (
     <div>
         {/* ----- TESTING CONSOLE LOG BUTTON ----- */}
-        <button onClick={()=>console.log(groups, " ", ticketsData)}> consolelog</button>
+        <button onClick={()=>console.log(grouping, " ", usersData)}> consolelog</button>
       <Navbar grouping={grouping} ordering={ordering} setGrouping={setGrouping} setOrdering={setOrdering}/>
-      <div>
-        <GroupContainer groupsData={groups} ordering={ordering}/>
+      <div className='p-4 overflow-auto'>
+        <GroupContainer groupsData={groups} ordering={ordering} usersData={usersData} grouping={grouping}/>
       </div>
     </div>
   )
