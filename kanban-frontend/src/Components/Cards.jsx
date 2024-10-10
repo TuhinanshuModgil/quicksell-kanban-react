@@ -16,6 +16,7 @@ import urgentPriorityGrey from "../Assets/icons_FEtask/SVG - Urgent Priority gre
 import todo from "../Assets/icons_FEtask/To-do.svg";
 import UserImage from "./UserImage";
 
+// Icon Map for Status
 const iconMap = {
   dotMenu: dotMenu,
   Backlog: backlog,
@@ -24,7 +25,7 @@ const iconMap = {
 };
 
 function Cards({ cardData, userData }) {
-    console.log("This is data1", userData)
+   
   return (
     <div className="border p-4 rounded-md shadow flex flex-col gap-2 min-h-40 justify-between bg-white max-w-80">
       <div className="flex gap-2 flex-col">

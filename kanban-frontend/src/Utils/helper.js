@@ -1,3 +1,4 @@
+// 26 pasel backgrounds for user background based on first character of name
 export const pastelColors = [
     "#FFB3BA", // Light Pink
     "#FFDFBA", // Light Orange
@@ -27,6 +28,7 @@ export const pastelColors = [
     "#D1C7C9"  // Soft Lavender
 ];
 
+// convert the first character to a number b/w 0-25
 export function charToNumber(char) {
     // Ensure the character is a valid alphabet letter
     if (char.length === 1 && /^[a-zA-Z]$/.test(char)) {

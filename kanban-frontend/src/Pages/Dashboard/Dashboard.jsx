@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import GroupContainer from '../../Components/GroupContainer';
 
-// ---SHIFT TO ENV AFTER TESTING---
+// ---SHIFT TO ENV AFTER IN REAL PRODUCTION DEVELOPEMNT---
 const API_URL = "https://api.quicksell.co/v1/internal/frontend-assignment";
 
 function Dashboard() {
@@ -21,18 +21,18 @@ function Dashboard() {
     // Map to keep track of grouping 
     const [groups, setGroups] = useState({})
 
-    // To update local storage on change of grouping and ordering
+    // To update local storage on change of grouping and ordering and updating the groups data
     useEffect(()=>{
         localStorage.setItem('grouping', grouping)
         localStorage.setItem('ordering', ordering)
 
+        // regroup according to the new values of the grouping and ordering
         handleGrouping(grouping)
     },[grouping, ordering, ticketsData])
 
     // Function to run the inital call to API
     useEffect(()=>{
-        getApiData()
-        
+        getApiData()     
     }, [])
 
     // logic to group the data according selected grouping option
@@ -41,9 +41,12 @@ function Dashboard() {
         // map will have a structure like { grouping_value : array_of_all_data_having_that_value }
         const groupedData = {} 
         ticketsData.forEach((element)=> {
+            // since the key for user in dropdown and API are different check for it 
+            // In real development env a map would be used for this
             if(grouping == 'users'){
                 grouping = 'userId'
             }
+
             // key corresponding to that value of selected grouping for that element 
             let key = groupedData[element[grouping]]
             // check if key is alreay present
@@ -51,6 +54,7 @@ function Dashboard() {
                 groupedData[element[grouping]] = [...key, element]
             }
             else{
+                // if not present create new key for that group
                 groupedData[element[grouping]] = [element]
             }
 
@@ -66,7 +70,7 @@ function Dashboard() {
             const data = await response.json();
             setTicketsData(data.tickets)
 
-            // Create a map of userId to userData to reduce time-complexity of searching in nested components
+            // Create a map of userId to userData to reduce time-complexity of searching in components down the line
             const userDataMap = {} 
             data?.users?.forEach((user)=> {
                 userDataMap[user.id] = user

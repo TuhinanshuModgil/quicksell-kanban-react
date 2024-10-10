@@ -8,6 +8,7 @@ import imgMediumPriority from "../../Assets/icons_FEtask/Img - Medium Priority.s
 import urgentPriorityColour from "../../Assets/icons_FEtask/SVG - Urgent Priority colour.svg";
 import urgentPriorityGrey from "../../Assets/icons_FEtask/SVG - Urgent Priority grey.svg";
 
+// map of priority level and data associated with it
 const priorityMap = {
   0: {
     level: 1,
@@ -37,7 +38,7 @@ const priorityMap = {
   },
 };
 function PriorityGroupHeader({ element }) {
-  console.log("Thisi is element in group", element);
+  
   return (
     <div className="flex justify-between mb-2">
       <div className="flex gap-2 text-nowrap">

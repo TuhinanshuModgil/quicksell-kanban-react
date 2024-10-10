@@ -1,21 +1,23 @@
 import React from "react";
 import Cards from "./Cards";
-const priorityMap = {};
+
 function Groups({ groupList, ordering, usersData, grouping }) {
-console.log("this is group", groupList, "user dada", usersData[groupList[0].userId])
+  
+   // Logic to decide the ordeing inside the group 
   if (ordering == "priority") {
+    // Sort with priority
     groupList = groupList.sort((a, b) => a.priority - b.priority);
-  } else if (ordering == "title") {
+} else if (ordering == "title") {
+    // Sort with title
     groupList = groupList.sort((a, b) => {
       const entityA = a.title.toUpperCase(); // ignore upper and lowercase
       const entityB = b.title.toUpperCase(); // ignore upper and lowercase
       if (entityA < entityB) {
-        return -1;
+        return -1; 
       }
       if (entityA > entityB) {
         return 1;
       }
-
       // names must be equal
       return 0;
     });

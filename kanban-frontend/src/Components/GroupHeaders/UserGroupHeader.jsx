@@ -7,7 +7,6 @@ function UserGroupHeader({ element, userData }) {
   return (
     <div className="flex justify-between mb-2">
       <UserImage userData={userData} />
-      {/* <h3>{userData?.name}</h3>   */}
       <div className="flex gap-2">
         <img src={add} alt="dot menu" />
         <img src={dotMenu} alt="dot menu" />
